@@ -19,4 +19,13 @@ export class UserService {
     return resp;
   }
 
+  login(email: string, password: string): Observable<any> {
+    let resp = this.http.get<any>('http://localhost:8080/api/user/login?email=' + email + '&password=' + password);
+    return resp;
+  }
+
+  getUserById(id:number): Observable<any> {
+    let resp = this.http.get<any>('http://localhost:8080/api/user/get?id=' + id);
+    return resp;
+  }
 }
